@@ -1,0 +1,77 @@
+// Import variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Import global styles
+@import 'global';
+
+// Import component styles
+@import 'header';
+@import 'footer';
+@import 'home';
+
+// Additional styles
+.revealed {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.form__success {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba($primary, 0.1);
+  border-left: 3px solid $primary;
+  padding: $spacer * 1.5;
+  border-radius: $border-radius;
+  margin-top: $spacer * 2;
+  animation: fadeIn 0.5s ease;
+
+  &-icon {
+    font-size: 1.5rem;
+    color: $primary;
+    margin-right: $spacer;
+  }
+
+  &-content {
+    h4 {
+      font-size: 1.125rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacer * 0.5;
+      color: $gray-900;
+    }
+
+    p {
+      margin-bottom: 0;
+      color: $gray-600;
+    }
+  }
+}
+
+.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(#dc3545, 0.25) !important;
+}
+

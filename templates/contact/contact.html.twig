@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous - TezDev{% endblock %}
+{% block meta_description %}Nous sommes là pour répondre à vos questions et vous aider à démarrer votre projet - TezDev{% endblock %}
+
+{% block body %}
+    {# Page Header #}
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">{{ title }}</h1>
+            <p class="page-header__description">{{ description }}</p>
+        </div>
+    </section>
+    
+    {# Contact Section #}
+    <section class="contact">
+        <div class="container">
+            <div class="contact__content">
+                <div class="contact__info">
+                    <h2 class="contact__title">Parlons de votre projet</h2>
+                    <p class="contact__description">
+                        Remplissez le formulaire ci-dessous et nous vous contacterons dans les plus brefs délais pour discuter de votre projet et de la façon dont nous pouvons vous aider.
+                    </p>
+                    
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h3 class="contact__detail-title">Adresse</h3>
+                                <p class="contact__detail-text">123 Rue de l'Innovation, 75000 Paris</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h3 class="contact__detail-title">Téléphone</h3>
+                                <p class="contact__detail-text">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h3 class="contact__detail-title">Email</h3>
+                                <p class="contact__detail-text">contact@tezdev.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h3 class="contact__detail-title">Heures d'ouverture</h3>
+                                <p class="contact__detail-text">Lundi - Vendredi: 9h00 - 18h00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact__form">
+                    <form action="#" method="POST" class="form">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="firstName" class="form__label">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" class="form__input" required>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="lastName" class="form__label">Nom</label>
+                                <input type="text" id="lastName" name="lastName" class="form__input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="phone" class="form__label">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="form__input">
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="service" class="form__label">Service</label>
+                            <select id="service" name="service" class="form__select">
+                                <option value="">Sélectionnez un service</option>
+                                <option value="web">Développement Web</option>
+                                <option value="design">Design UI/UX</option>
+                                <option value="mobile">Applications Mobiles</option>
+                                <option value="strategy">Stratégie Digitale</option>
+                                <option value="seo">SEO & Marketing</option>
+                                <option value="cloud">Cloud & DevOps</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form__textarea" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {# Map Section #}
+    <section class="map">
+        <div class="map__placeholder">
+            <p>Carte Google Maps ici</p>
+        </div>
+    </section>
+{% endblock %}

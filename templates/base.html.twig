@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% block title %}1 jour 1 collection - Un événement artistique unique{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}1 jour 1 collection - Un événement artistique unique autour d'une exposition éphémère d'œuvres originales, sérigraphies et photos.{% endblock %}">
+
+    {# Favicon #}
+    <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
+
+    {# Font Awesome #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {# Google Fonts #}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {# Encore entries #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% include 'partials/header.html.twig' %}
+
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+{% include 'partials/footer.html.twig' %}
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos de nous - TezDev{% endblock %}
+{% block meta_description %}Découvrez notre histoire, notre mission et notre équipe - TezDev{% endblock %}
+
+{% block body %}
+    {# Page Header #}
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">{{ title }}</h1>
+            <p class="page-header__description">{{ description }}</p>
+        </div>
+    </section>
+    
+    {# About Section #}
+    <section class="about-page">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-section__image">
+                    <img src="{{ asset('build/images/about-history.svg') }}" alt="Notre histoire">
+                </div>
+                <div class="about-section__content">
+                    <h2 class="about-section__title">Notre histoire</h2>
+                    <p class="about-section__text">
+                        TezDev a été fondée en 2015 avec une vision claire : créer des solutions digitales innovantes qui aident les entreprises à se développer dans un monde de plus en plus connecté.
+                    </p>
+                    <p class="about-section__text">
+                        Depuis, nous avons travaillé avec des clients de toutes tailles, des startups aux grandes entreprises, pour développer des sites web, des applications mobiles et des stratégies digitales qui répondent à leurs besoins spécifiques.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="about-section about-section--reverse">
+                <div class="about-section__image">
+                    <img src="{{ asset('build/images/about-mission.svg') }}" alt="Notre mission">
+                </div>
+                <div class="about-section__content">
+                    <h2 class="about-section__title">Notre mission</h2>
+                    <p class="about-section__text">
+                        Notre mission est de fournir des solutions digitales de haute qualité qui aident nos clients à atteindre leurs objectifs commerciaux. Nous croyons que la technologie doit être accessible à tous et que chaque entreprise mérite une présence en ligne professionnelle et efficace.
+                    </p>
+                    <p class="about-section__text">
+                        Nous nous engageons à rester à la pointe de l'innovation technologique pour offrir à nos clients les meilleures solutions possibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {# CTA Section #}
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">Prêt à travailler avec nous ?</h2>
+            <p class="cta__description">Contactez-nous dès aujourd'hui pour discuter de votre projet</p>
+            <a href="{{ path('app_contact') }}" class="btn btn-secondary">Démarrer un projet</a>
+        </div>
+    </section>
+{% endblock %}

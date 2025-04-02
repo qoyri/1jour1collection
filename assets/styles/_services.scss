@@ -1,0 +1,9 @@
+/* Services Page */
+.services-page {
+  padding: $spacer * 4 0;
+  background-color: $white;
+
+  @include respond-to(lg) {
+    padding: $spacer * 6 0;
+  }
+}

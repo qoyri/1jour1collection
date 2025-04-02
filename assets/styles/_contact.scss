@@ -1,0 +1,26 @@
+/* Contact Page */
+.contact {
+  padding: $spacer * 4 0;
+  background-color: $white;
+
+  @include respond-to(lg) {
+    padding: $spacer * 6 0;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: $spacer;
+  }
+
+  &__description {
+    color: $gray-600;
+    margin-bottom: $spacer * 2;
+  }
+
+  &__form {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px rgba($black, 0.1);
+    padding: $spacer * 2;
+  }
+}

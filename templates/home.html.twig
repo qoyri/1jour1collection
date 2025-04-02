@@ -1,0 +1,269 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}1 jour 1 collection - Un événement artistique unique{% endblock %}
+
+{% block body %}
+    {# Hero Section #}
+    <section class="hero" id="home">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h2 class="hero__subtitle">{{ hero.subtitle }}</h2>
+                <h1 class="hero__title">{{ hero.title }}</h1>
+                <p class="hero__description">{{ hero.description }}</p>
+
+                <form class="hero__form">
+                    <input type="email" class="hero__input" placeholder="Votre adresse email" required>
+                    <button type="submit" class="hero__button">
+                        {{ hero.cta }} <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="hero__images">
+                <div class="hero__play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="hero__main-image">
+                    <img src="{{ asset('build/images/hero/hero-main.jpg') }}" alt="Exposition d'art">
+                </div>
+                <div class="hero__secondary-image">
+                    <img src="{{ asset('build/images/hero/hero-secondary.jpg') }}" alt="Détail d'exposition">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Benefits Section #}
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ benefits.title }}</h2>
+            </div>
+
+            <div class="benefits__grid">
+                {% for item in benefits.items %}
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <i class="fas {{ item.icon }}"></i>
+                        </div>
+                        <h3 class="benefit-card__title">{{ item.title }}</h3>
+                        <p class="benefit-card__description">{{ item.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# Reste du contenu inchangé #}
+    {# About Section #}
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__image">
+                    <img src="{{ asset('build/images/about/about-image.jpg') }}" alt="Exposition d'art">
+                </div>
+                <div class="about__text">
+                    <h2 class="about__title">{{ about.title }}</h2>
+                    <h3 class="about__subtitle">{{ about.subtitle }}</h3>
+                    <p class="about__description">{{ about.description }}</p>
+
+                    <ul class="feature-list">
+                        {% for feature in about.features %}
+                            <li class="feature-list__item">
+                                <div class="feature-list__icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span>{{ feature }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Services Section #}
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">{{ services.title }}</span>
+                <h2 class="section-title">{{ services.subtitle }}</h2>
+                <p class="section-description">{{ services.description }}</p>
+            </div>
+
+            <div class="services__grid">
+                {% for item in services.items %}
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas {{ item.icon }}"></i>
+                        </div>
+                        <h3 class="service-card__title">{{ item.title }}</h3>
+                        <p class="service-card__description">{{ item.description }}</p>
+                        <a href="#contact" class="service-card__link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# Engagement Section #}
+    <section class="engagement" id="engagement">
+        <div class="container">
+            <div class="engagement__content">
+                <div class="engagement__text">
+                    <h2 class="section-title">{{ engagement.title }}</h2>
+                    <p class="engagement__description">{{ engagement.description }}</p>
+
+                    <ul class="engagement__list">
+                        {% for item in engagement.items %}
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ item }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="engagement__formats">
+                        <h3 class="engagement__formats-title">Formats possibles</h3>
+                        <ul class="engagement__formats-list">
+                            {% for format in engagement.formats %}
+                                <li>
+                                    <i class="fas fa-angle-right"></i>
+                                    <span>{{ format }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">S'engager</a>
+                </div>
+                <div class="engagement__image">
+                    <img src="{{ asset('build/images/engagement/engagement-image.jpg') }}" alt="Engagement artistique">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Programme Section #}
+    <section class="programme" id="programme">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ programme.title }}</h2>
+            </div>
+
+            <div class="programme__timeline">
+                {% for key, item in programme.items %}
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">{{ key + 1 }}</div>
+                        <div class="timeline-item__content">
+                            <p>{{ item }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# CTA Section #}
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">{{ cta.title }}</h2>
+                <p class="cta__description">{{ cta.description }}</p>
+                <a href="#contact" class="btn">{{ cta.button }}</a>
+            </div>
+        </div>
+    </section>
+
+    {# Contact Section #}
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-description">Réservez votre événement artistique unique ou demandez plus d'informations</p>
+            </div>
+
+            <div class="contact__content">
+                <div class="contact__info">
+                    <h3 class="contact__title">Parlons de votre projet</h3>
+                    <p class="contact__description">
+                        Remplissez le formulaire ci-dessous et nous vous contacterons dans les plus brefs délais pour discuter de votre événement artistique et de la façon dont nous pouvons vous aider.
+                    </p>
+
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h4 class="contact__detail-title">Adresse</h4>
+                                <p class="contact__detail-text">123 Rue de l'Art, 75000 Paris</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h4 class="contact__detail-title">Téléphone</h4>
+                                <p class="contact__detail-text">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact__detail-content">
+                                <h4 class="contact__detail-title">Email</h4>
+                                <p class="contact__detail-text">contact@1jour1collection.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__form">
+                    <form action="#" method="POST" class="form">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="firstName" class="form__label">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" class="form__input" required>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="lastName" class="form__label">Nom</label>
+                                <input type="text" id="lastName" name="lastName" class="form__input" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="phone" class="form__label">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="form__input">
+                        </div>
+
+                        <div class="form__group">
+                            <label for="company" class="form__label">Entreprise / Organisation</label>
+                            <input type="text" id="company" name="company" class="form__input">
+                        </div>
+
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form__textarea" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

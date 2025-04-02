@@ -1,0 +1,37 @@
+// Responsive breakpoints mixin
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Grid mixin
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Button variant mixin
+@mixin button-variant($bg, $border, $color, $hover-bg, $hover-border, $hover-color) {
+  background-color: $bg;
+  border-color: $border;
+  color: $color;
+
+  &:hover, &:focus, &:active {
+    background-color: $hover-bg;
+    border-color: $hover-border;
+    color: $hover-color;
+  }
+}
+
+// Transition mixin
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+

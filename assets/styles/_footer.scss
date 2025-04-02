@@ -1,0 +1,172 @@
+/* Footer styles */
+.footer {
+  background-color: $gray-900;
+  color: $gray-400;
+  padding: $spacer * 5 0 $spacer * 2;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacer * 3;
+    margin-bottom: $spacer * 3;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+
+  &__column {
+    &:first-child {
+      @include respond-to(md) {
+        grid-column: span 2;
+      }
+
+      @include respond-to(lg) {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: $spacer * 1.5;
+
+    img {
+      height: 40px;
+/*      filter: brightness(0) invert(1); */
+}
+}
+
+&__description {
+margin-bottom: $spacer * 1.5;
+line-height: $line-height-lg;
+max-width: 400px;
+}
+
+&__social {
+display: flex;
+gap: $spacer;
+}
+
+&__social-link {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 36px;
+height: 36px;
+background-color: rgba($white, 0.1);
+color: $white;
+border-radius: 50%;
+transition: all 0.3s ease;
+
+&:hover {
+background-color: $primary;
+color: $white;
+transform: translateY(-3px);
+}
+}
+
+&__title {
+font-size: 1.25rem;
+font-weight: $font-weight-bold;
+color: $white;
+margin-bottom: $spacer * 1.5;
+position: relative;
+padding-bottom: $spacer;
+
+&::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 50px;
+height: 2px;
+background-color: $primary;
+}
+}
+
+&__links {
+list-style: none;
+padding: 0;
+margin: 0;
+
+li {
+margin-bottom: $spacer * 0.75;
+
+a {
+  color: $gray-400;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: $spacer * 0.75;
+
+  &::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $primary;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: $white;
+    padding-left: $spacer * 1.25;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+}
+}
+
+&__contact {
+list-style: none;
+padding: 0;
+margin: 0;
+
+li {
+display: flex;
+align-items: flex-start;
+margin-bottom: $spacer;
+
+i {
+  color: $primary;
+  margin-right: $spacer;
+  margin-top: 5px;
+}
+
+a {
+  color: $gray-400;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+span {
+  color: $gray-400;
+}
+}
+}
+
+&__bottom {
+text-align: center;
+padding-top: $spacer * 2;
+border-top: 1px solid rgba($white, 0.1);
+
+p {
+margin-bottom: 0;
+font-size: 0.875rem;
+}
+}
+}
+

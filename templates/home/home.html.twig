@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TezDev - Solutions Digitales Innovantes{% endblock %}
+
+{% block body %}
+    {# Hero Section #}
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">{{ title }}</h1>
+                    <p class="hero__description">{{ description }}</p>
+                    <div class="hero__buttons">
+                        <a href="{{ path('app_contact') }}" class="btn btn-primary">Démarrer un projet</a>
+                        <a href="{{ path('app_services') }}" class="btn btn-outline">Découvrir nos services</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="{{ asset('build/images/hero-image.svg') }}" alt="Hero Image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {# Services Section #}
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos services</h2>
+                <p class="section-description">Découvrez comment nous pouvons vous aider à atteindre vos objectifs</p>
+            </div>
+            
+            <div class="services__grid">
+                {% for service in services %}
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas {{ service.icon }}"></i>
+                        </div>
+                        <h3 class="service-card__title">{{ service.title }}</h3>
+                        <p class="service-card__description">{{ service.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    {# About Section #}
+    <section class="about">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__image">
+                    <img src="{{ asset('build/images/about-image.svg') }}" alt="About Us">
+                </div>
+                <div class="about__text">
+                    <h2 class="section-title">À propos de nous</h2>
+                    <p class="about__description">
+                        TezDev est une agence digitale spécialisée dans la création de solutions web et mobiles innovantes. Notre équipe d'experts passionnés s'engage à fournir des services de haute qualité qui répondent aux besoins spécifiques de chaque client.
+                    </p>
+                    
+                    <div class="about__features">
+                        <div class="about__feature">
+                            <div class="about__feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Solutions personnalisées</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Expertise technique</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Support continu</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Résultats mesurables</span>
+                        </div>
+                    </div>
+                    
+                    <a href="{{ path('app_about') }}" class="btn-link">
+                        En savoir plus
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {# CTA Section #}
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">Prêt à transformer votre vision en réalité ?</h2>
+            <p class="cta__description">Contactez-nous dès aujourd'hui pour discuter de votre projet</p>
+            <a href="{{ path('app_contact') }}" class="btn btn-secondary">Démarrer un projet</a>
+        </div>
+    </section>
+{% endblock %}
