@@ -15,7 +15,7 @@ Ce projet est un site web pour **"1 Jour 1 Collection"**, un service d'expositio
 
 ## Technologies utilisées
 
-- **Backend**: Symfony 6.x  
+- **Backend**: Symfony 7.x  
 - **Frontend**:  
   - SCSS pour les styles  
   - JavaScript vanilla  
